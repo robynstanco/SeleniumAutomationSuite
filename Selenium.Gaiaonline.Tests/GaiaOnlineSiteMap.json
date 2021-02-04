@@ -1,0 +1,17 @@
+﻿[
+  {
+    "Name": "Login",
+    "Title": "Welcome to Gaia | Gaia Online",
+    "RelativePath": "/"
+  },
+  {
+    "Name": "Bad Login",
+    "Title": "Uh Oh! Incorrect Login Info! | Gaia Online",
+    "RelativePath": "/auth/login/"
+  },
+  {
+    "Name": "Inbox",
+    "Title": "Private Message Inbox | Gaia Online",
+    "RelativePath": "/profile/privmsg.php"
+  }
+]
