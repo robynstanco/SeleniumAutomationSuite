@@ -1,4 +1,5 @@
-﻿using Selenium.Framework.Helpers;
+﻿using Selenium.Framework;
+using Selenium.Framework.Helpers;
 using Selenium.GaiaOnline.Forms;
 using System;
 
@@ -6,21 +7,33 @@ namespace Selenium.GaiaOnline.Pages
 {
     public class LoginPage
     {
+        /// <summary>
+        /// Go to the login page.
+        /// </summary>
         public static void GoTo()
         {
-            NavigationHelpers.GoToPage("Login");
+            NavigationHelpers.GoToPage(Constants.Login);
         }
 
+        /// <summary>
+        /// Assert you are at the login page within a normal timespan.
+        /// </summary>
         public static void AssertIsAt()
         {
-            AssertionHelpers.AssertIsAtPage("Login", TimeSpanHelpers.NormalWait);
+            AssertionHelpers.AssertIsAtPage(Constants.Login, TimeSpanHelpers.NormalWait);
         }
 
+        /// <summary>
+        /// Assert the logout succeeded within a normal timespan.
+        /// </summary>
         public static void AssertLogoutSucceeded()
         {
             AssertionHelpers.AssertElementIsVisibleByCssSelector(".loginheader", TimeSpanHelpers.NormalWait);
         }
 
+        /// <summary>
+        /// Logout of Gaiaonline.
+        /// </summary>
         public static void Logout()
         {
             ElementHelpers.HoverOverElementByCssSelector(".user-dropdown-arrow");
@@ -28,6 +41,10 @@ namespace Selenium.GaiaOnline.Pages
             ElementHelpers.ClickFirstElementByCssSelector(".user-dropdown-menu ul li:nth-child(3) a");
         }
 
+        /// <summary>
+        /// Try to logout of Gaiaonline.
+        /// </summary>
+        /// <returns>true if able to logout</returns>
         public static bool TryLogout()
         {
             try

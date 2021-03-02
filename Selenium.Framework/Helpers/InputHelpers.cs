@@ -9,6 +9,9 @@ namespace Selenium.Framework.Helpers
 
         private static Random r = new Random();
 
+        /// <summary>
+        /// Generates a random number between one and a million.
+        /// </summary>
         public static string RandomNumber
         {
             get
@@ -17,6 +20,9 @@ namespace Selenium.Framework.Helpers
             }
         }
 
+        /// <summary>
+        /// Generates a random currency (double) value between one and a million.
+        /// </summary>
         public static string RandomCurrency
         {
             get
@@ -25,6 +31,9 @@ namespace Selenium.Framework.Helpers
             }
         }
 
+        /// <summary>
+        /// Generates a random ten digit phone number, unformatted.
+        /// </summary>
         public static string RandomPhone
         {
             get
@@ -47,6 +56,9 @@ namespace Selenium.Framework.Helpers
             }
         }
 
+        /// <summary>
+        /// Generates a random zip code, unformatted. 
+        /// </summary>
         public static string RandomZipCode
         {
             get
@@ -62,6 +74,9 @@ namespace Selenium.Framework.Helpers
             }
         }
 
+        /// <summary>
+        /// Generates a random percent zero to one hundred.
+        /// </summary>
         public static string RandomPercent
         {
             get
@@ -70,6 +85,9 @@ namespace Selenium.Framework.Helpers
             }
         }
 
+        /// <summary>
+        /// Generates a random standard format email with numbers.
+        /// </summary>
         public static string RandomEmail
         {
             get
@@ -78,22 +96,35 @@ namespace Selenium.Framework.Helpers
             }
         }
 
+        /// <summary>
+        /// Generates a random future date by adding a random number of days to today.
+        /// </summary>
         public static string RandomFutureDate
         {
             get
             {
-                return DateTime.Today.AddDays(double.Parse(RandomNumber)).ToString(DateFormat);
+                double days = double.Parse(RandomNumber);
+
+                return DateTime.Today.AddDays(days).ToString(DateFormat);
             }
         }
 
+        /// <summary>
+        /// Generates a random past date by subtracting a random number of days to today.
+        /// </summary>
         public static string RandomPastDate
         {
             get
             {
-                return DateTime.Today.AddDays(double.Parse(RandomNumber) * -1).ToString(DateFormat);
+                double days = double.Parse(RandomNumber) * -1; //add negative days
+
+                return DateTime.Today.AddDays(days).ToString(DateFormat);
             }
         }
 
+        /// <summary>
+        /// Gets todays date in specific date format.
+        /// </summary>
         public static string TodaysDate
         {
             get

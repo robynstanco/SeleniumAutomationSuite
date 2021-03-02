@@ -4,7 +4,7 @@ using Selenium.Framework;
 namespace Tests.Selenium.GaiaOnline
 {
     [TestClass]
-    public class TestStartup
+    public class TestInitialize
     {
         [AssemblyInitialize]
         public static void AssemblyInitialize(TestContext testContext)

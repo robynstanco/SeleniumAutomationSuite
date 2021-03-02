@@ -33,7 +33,7 @@ namespace Tests.Selenium.GaiaOnline.Fixtures
         public void LogonIsSuccessful()
         {
            LoginPage.Logon()
-                .WithUserName(Startup.Credentials.Username)
+                .WithUsername(Startup.Credentials.Username)
                 .WithPassword(Startup.Credentials.Password)
                 .Submit();
 
@@ -46,7 +46,7 @@ namespace Tests.Selenium.GaiaOnline.Fixtures
         public void LogonWithInvalidCredentialsFails()
         {
             LoginPage.Logon()
-                .WithUserName("badusername")
+                .WithUsername("badusername")
                 .WithPassword(Startup.Credentials.Password)
                 .Submit();
 
@@ -57,7 +57,7 @@ namespace Tests.Selenium.GaiaOnline.Fixtures
         public void LogoutIsSuccessful()
         {
             LoginPage.Logon()
-                .WithUserName(Startup.Credentials.Username)
+                .WithUsername(Startup.Credentials.Username)
                 .WithPassword(Startup.Credentials.Password)
                 .Submit();
 

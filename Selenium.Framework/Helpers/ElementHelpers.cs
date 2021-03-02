@@ -1,9 +1,7 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
-using Selenium.Framework;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace Selenium.Framework.Helpers
 {
@@ -11,58 +9,127 @@ namespace Selenium.Framework.Helpers
     {
         #region Get All Elements
 
-        public static IReadOnlyCollection<IWebElement> GetElementsByClassName(string className)
+        /// <summary>
+        /// Find all web elements by a given element locator.
+        /// </summary>
+        /// <param name="elementLocator">element locator to find elements by</param>
+        /// <returns>collection of found web elements</returns>
+        private static IReadOnlyCollection<IWebElement> FindElements(By elementLocator)
         {
-            return Startup.Driver.FindElements(By.ClassName(className));
+            IReadOnlyCollection<IWebElement> elementsByLocator = Startup.Driver.FindElements(elementLocator);
+
+            return elementsByLocator;
         }
 
+        /// <summary>
+        /// Find all elements by a given class name.
+        /// </summary>
+        /// <param name="className">class name to find elements by</param>
+        /// <returns>collection of found web elements</returns>
+        public static IReadOnlyCollection<IWebElement> GetElementsByClassName(string className)
+        {
+            By elementLocator = By.ClassName(className);
+
+            IReadOnlyCollection<IWebElement> elementsByClassName = FindElements(elementLocator);
+
+            return elementsByClassName;
+        }
+
+        /// <summary>
+        /// Find all elements by a given css selector.
+        /// </summary>
+        /// <param name="selector">css selector to find elements by</param>
+        /// <returns>collection of found web elements</returns>
         public static IReadOnlyCollection<IWebElement> GetElementsByCssSelector(string selector)
         {
-            return Startup.Driver.FindElements(By.CssSelector(selector));
+            By elementLocator = By.CssSelector(selector);
+
+            IReadOnlyCollection<IWebElement> elementsByCssSelector = FindElements(elementLocator);
+
+            return elementsByCssSelector;
         }
 
         public static IReadOnlyCollection<IWebElement> GetElementsById(string id)
         {
-            return Startup.Driver.FindElements(By.Id(id));
+            By elementLocator = By.Id(id);
+
+            IReadOnlyCollection<IWebElement> elementsById = FindElements(elementLocator);
+
+            return elementsById;
         }
 
         public static IReadOnlyCollection<IWebElement> GetElementsByLinkText(string linkText)
         {
-            return Startup.Driver.FindElements(By.LinkText(linkText));
+            By elementLocator = By.LinkText(linkText);
+
+            IReadOnlyCollection<IWebElement> elementsByLinkText = FindElements(elementLocator);
+
+            return elementsByLinkText;
         }
 
         public static IReadOnlyCollection<IWebElement> GetElementsByName(string name)
         {
-            return Startup.Driver.FindElements(By.Name(name));
+            By elementLocator = By.Name(name);
+
+            IReadOnlyCollection<IWebElement> elementsByName = FindElements(elementLocator);
+
+            return elementsByName;
         }
 
         public static IReadOnlyCollection<IWebElement> GetElementsByPartialLinkText(string partialLinkText)
         {
-            return Startup.Driver.FindElements(By.PartialLinkText(partialLinkText));
+            By elementLocator = By.PartialLinkText(partialLinkText);
+
+            IReadOnlyCollection<IWebElement> elementsByPartialLinkText = FindElements(elementLocator);
+
+            return elementsByPartialLinkText;
         }
 
         public static IReadOnlyCollection<IWebElement> GetElementsByTagName(string tagName)
         {
-            return Startup.Driver.FindElements(By.TagName(tagName));
+            By elementLocator = By.TagName(tagName);
+
+            IReadOnlyCollection<IWebElement> elementsByTagName = FindElements(elementLocator);
+
+            return elementsByTagName;
         }
 
         public static IReadOnlyCollection<IWebElement> GetElementsByXPath(string xPath)
         {
-            return Startup.Driver.FindElements(By.XPath(xPath));
+            By elementLocator = By.XPath(xPath);
+
+            IReadOnlyCollection<IWebElement> elementsByXPath = FindElements(elementLocator);
+
+            return elementsByXPath;
         }
 
         #endregion
 
         #region Get First Element
 
+        private static IWebElement FindElement(By elementLocator)
+        {
+            IWebElement elementByLocator = Startup.Driver.FindElement(elementLocator);
+
+            return elementByLocator;
+        }
+
         public static IWebElement GetFirstElementByClassName(string className)
         {
-            return Startup.Driver.FindElement(By.ClassName(className));
+            By elementLocator = By.ClassName(className);
+
+            IWebElement elementByClassName = FindElement(elementLocator);
+
+            return elementByClassName;
         }
 
         public static IWebElement GetFirstElementByCssSelector(string selector)
         {
-            return Startup.Driver.FindElement(By.CssSelector(selector));
+            By elementLocator = By.CssSelector(selector);
+
+            IWebElement elementByCssSelector = FindElement(elementLocator);
+
+            return elementByCssSelector;
         }
 
         public static IWebElement GetFirstElementById(string id)
@@ -250,6 +317,12 @@ namespace Selenium.Framework.Helpers
             element.SendKeys(keysToSend);
         }
 
+        /// <summary>
+        /// Explicitly wait & check to see if element is visibly by a given locator within a timespan.
+        /// </summary>
+        /// <param name="elementLocator">element locator</param>
+        /// <param name="maxWait">maximum time to wait</param>
+        /// <returns>true if element is located within timespan</returns>
         public static bool IsElementVisible(By elementLocator, TimeSpan maxWait)
         {
             try
@@ -264,6 +337,11 @@ namespace Selenium.Framework.Helpers
             }
         }
 
+        /// <summary>
+        /// Explicitly wait for a given element by locator within a given timespan.
+        /// </summary>
+        /// <param name="elementLocator">use to locate element</param>
+        /// <param name="maxWait">maximum time to wait</param>
         public static void WaitForElement(By elementLocator, TimeSpan maxWait)
         {
             WebDriverWait waitForElement = new WebDriverWait(Startup.Driver, maxWait);

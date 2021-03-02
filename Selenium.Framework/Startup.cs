@@ -7,18 +7,17 @@ using Selenium.Framework.Enums;
 using Selenium.Framework.Models;
 using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.IO;
 
 namespace Selenium.Framework
 {
     public class Startup
     {
-        public static IConfiguration Configuration;
-
-        public static IWebDriver Driver { get; set; }
+        public static IConfiguration Configuration { get; set; }
 
         public static Credentials Credentials { get; set; }
+
+        public static IWebDriver Driver { get; set; }
 
         public static Dictionary<string, Page> SiteMap { get; set; }
 
@@ -88,8 +87,12 @@ namespace Selenium.Framework
             }
         }
 
+        /// <summary>
+        /// Configured the WebDriver according to the app settings json file in the test project using the Framework.
+        /// </summary>
         public static void Configure()
         {
+            //Construct the path to application settings
             string currentDirectory = Directory.GetCurrentDirectory();
             string parentOne = Directory.GetParent(currentDirectory).FullName;
             string parentTwo = Directory.GetParent(parentOne).FullName;
@@ -106,6 +109,9 @@ namespace Selenium.Framework
             ConfigureTestData();
         }
 
+        /// <summary>
+        /// Dispose of driver instance to properly kill chromedriver.exe
+        /// </summary>
         public static void Dispose()
         {
             Driver.Quit();
@@ -113,6 +119,9 @@ namespace Selenium.Framework
             Driver = null;
         }
 
+        /// <summary>
+        /// Configure the driver based on Browser selection. Headless browsing applies special characteristics
+        /// </summary>
         private static void ConfigureDriver()
         {
             if (Driver == null)
@@ -135,6 +144,9 @@ namespace Selenium.Framework
             }
         }
 
+        /// <summary>
+        /// Deserialize the credentials from the given json file location
+        /// </summary>
         private static void ConfigureCredentials()
         {
             if (CredentialsFile != null)
@@ -145,6 +157,9 @@ namespace Selenium.Framework
             }
         }
 
+        /// <summary>
+        /// Deserialize the site map from the given json file location.
+        /// </summary>
         private static void ConfigureSiteMap()
         {
             SiteMap = new Dictionary<string, Page>();
@@ -153,9 +168,12 @@ namespace Selenium.Framework
 
             List<Page> pages = JsonConvert.DeserializeObject<List<Page>>(siteMapJSON);
 
-            pages.ForEach(p => SiteMap[p.Name.ToLower()] = p);
+            pages.ForEach(p => SiteMap[p.Name.ToLower()] = p); //add deserialized pages to sitemap
         }
 
+        /// <summary>
+        /// Parse the test data from the given json file location
+        /// </summary>
         private static void ConfigureTestData()
         {
             if (TestDataFile != null)

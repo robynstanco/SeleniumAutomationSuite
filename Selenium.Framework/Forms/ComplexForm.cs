@@ -1,5 +1,8 @@
 ﻿namespace Selenium.Framework.Forms
 {
+    /// <summary>
+    /// Abstract form class to be implemented in projects that use the framework. Encapsulates all simple & complex form activities.
+    /// </summary>
     public abstract class ComplexForm : SimpleForm
     {
         public ComplexForm() : base()

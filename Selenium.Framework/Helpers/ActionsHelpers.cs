@@ -5,6 +5,10 @@ namespace Selenium.Framework.Helpers
 {
     public class ActionsHelpers
     {
+        /// <summary>
+        /// Hovers over the given web element by moving mouse.
+        /// </summary>
+        /// <param name="element">element to hover over</param>
         public static void PerformHoverAction(IWebElement element)
         {
             Actions hoverAction = new Actions(Startup.Driver);
@@ -12,6 +16,11 @@ namespace Selenium.Framework.Helpers
             hoverAction.MoveToElement(element).Perform();
         }
 
+        /// <summary>
+        /// Sends given Key (arrow up, tab, etc) a number of times.
+        /// </summary>
+        /// <param name="times">times to send key</param>
+        /// <param name="key">key to send</param>
         public static void PerformKeyAction(int times, string key)
         {
             Actions keyAction = new Actions(Startup.Driver);
