@@ -60,6 +60,10 @@ namespace Selenium.GaiaOnline.Pages
         }
 
         public static LoginForm CurrentLoginForm { get; private set; }
+        /// <summary>
+        /// Initiate logon to Gaiaonline by selecting header tab.
+        /// </summary>
+        /// <returns>login form for chaining</returns>
         public static LoginForm Logon()
         {
             ElementHelpers.ClickFirstElementByCssSelector(".header-login-tab-login");

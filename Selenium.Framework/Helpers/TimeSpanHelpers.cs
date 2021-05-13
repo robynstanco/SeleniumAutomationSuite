@@ -4,6 +4,9 @@ namespace Selenium.Framework.Helpers
 {
     public class TimeSpanHelpers
     {
+        /// <summary>
+        /// A small wait timespan of 2 seconds.
+        /// </summary>
         public static TimeSpan SmallWait
         {
             get
@@ -12,6 +15,9 @@ namespace Selenium.Framework.Helpers
             }
         }
 
+        /// <summary>
+        /// A normal wait timespan of 5 seconds.
+        /// </summary>
         public static TimeSpan NormalWait
         {
             get
@@ -20,6 +26,9 @@ namespace Selenium.Framework.Helpers
             }
         }
 
+        /// <summary>
+        /// A long wait timespan of 10 seconds.
+        /// </summary>
         public static TimeSpan LongWait
         {
             get

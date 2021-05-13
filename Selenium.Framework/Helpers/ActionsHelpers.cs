@@ -31,36 +31,64 @@ namespace Selenium.Framework.Helpers
             }
         }
         
+        /// <summary>
+        /// Send ArrowUp key any given number of times.
+        /// </summary>
+        /// <param name="times">times to send key</param>
         public static void KeyArrowUp(int times)
         {
             PerformKeyAction(times, Keys.ArrowUp);
         }
 
+        /// <summary>
+        /// Send ArrowRight key any given number of times.
+        /// </summary>
+        /// <param name="times">times to send key</param>
         public static void KeyArrowRight(int times)
         {
             PerformKeyAction(times, Keys.ArrowRight);
         }
 
+        /// <summary>
+        /// Send ArrowDown key any given number of times.
+        /// </summary>
+        /// <param name="times">times to send key</param>
         public static void KeyArrowDown(int times)
         {
             PerformKeyAction(times, Keys.ArrowDown);
         }
 
+        /// <summary>
+        /// Send ArrowLeft key any given number of times.
+        /// </summary>
+        /// <param name="times">times to send key</param>
         public static void KeyArrowLeft(int times)
         {
             PerformKeyAction(times, Keys.ArrowLeft);
         }
 
+        /// <summary>
+        /// Send PageUp key any given number of times.
+        /// </summary>
+        /// <param name="times">times to send key</param>
         public static void KeyPageUp(int times)
         {
             PerformKeyAction(times, Keys.PageUp);
         }
 
+        /// <summary>
+        /// Send PageDown key any given number of times.
+        /// </summary>
+        /// <param name="times">times to send key</param>
         public static void KeyPageDown(int times)
         {
             PerformKeyAction(times, Keys.PageDown);
         }
 
+        /// <summary>
+        /// Send Tab key any given number of times.
+        /// </summary>
+        /// <param name="times">times to send key</param>
         public static void KeyTab(int times)
         {
             PerformKeyAction(times, Keys.Tab);

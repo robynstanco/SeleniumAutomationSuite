@@ -10,11 +10,19 @@
 
         }
 
+        /// <summary>
+        /// Assert submission fails with given message. Called via override in implementating class.
+        /// </summary>
+        /// <param name="message">message to locate</param>
         public void AssertSubmissionFailedWithMessage(string message)
         {
             OnAssertSubmissionFailedWithMessage(message);
         }
 
+        /// <summary>
+        /// Assert submission succeeds with given message. Called via override in implementating class.
+        /// </summary>
+        /// <param name="message">message to locate</param>
         public void AssertSubmissionSucceededWithMessage(string message)
         {
             OnAssertSubmissionSucceededWithMessage(message);

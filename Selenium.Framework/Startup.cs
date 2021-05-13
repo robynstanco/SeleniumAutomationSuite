@@ -110,7 +110,7 @@ namespace Selenium.Framework
         }
 
         /// <summary>
-        /// Dispose of driver instance to properly kill chromedriver.exe
+        /// Dispose of driver instance to properly kill chromedriver.exe.
         /// </summary>
         public static void Dispose()
         {
@@ -120,7 +120,7 @@ namespace Selenium.Framework
         }
 
         /// <summary>
-        /// Configure the driver based on Browser selection. Headless browsing applies special characteristics
+        /// Configure the driver based on Browser selection. Headless browsing applies special characteristics.
         /// </summary>
         private static void ConfigureDriver()
         {
@@ -145,7 +145,7 @@ namespace Selenium.Framework
         }
 
         /// <summary>
-        /// Deserialize the credentials from the given json file location
+        /// Deserialize the credentials from the given json file location.
         /// </summary>
         private static void ConfigureCredentials()
         {
@@ -172,7 +172,7 @@ namespace Selenium.Framework
         }
 
         /// <summary>
-        /// Parse the test data from the given json file location
+        /// Parse the test data from the given json file location.
         /// </summary>
         private static void ConfigureTestData()
         {
