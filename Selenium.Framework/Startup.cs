@@ -104,9 +104,17 @@ namespace Selenium.Framework
             Configuration = builder.Build();
 
             ConfigureDriver();
-            ConfigureCredentials();
             ConfigureSiteMap();
-            ConfigureTestData();
+
+            if (!string.IsNullOrWhiteSpace(CredentialsFile))
+            {
+                ConfigureCredentials();
+            }
+            
+            if(!string.IsNullOrWhiteSpace(TestDataFile))
+            {
+                ConfigureTestData();
+            }
         }
 
         /// <summary>

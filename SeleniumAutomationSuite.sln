@@ -3,14 +3,18 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30709.132
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Selenium.Framework", "Selenium.Framework\Selenium.Framework.csproj", "{3FEE6A1F-7867-4406-A0B7-EF574C6DE99F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Selenium.Framework", "Selenium.Framework\Selenium.Framework.csproj", "{3FEE6A1F-7867-4406-A0B7-EF574C6DE99F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Selenium.GaiaOnline", "Selenium.GaiaOnline\Selenium.GaiaOnline.csproj", "{8DEE72C8-FC16-4929-B219-8DCCFA6C5FED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Selenium.GaiaOnline", "Selenium.GaiaOnline\Selenium.GaiaOnline.csproj", "{8DEE72C8-FC16-4929-B219-8DCCFA6C5FED}"
 	ProjectSection(ProjectDependencies) = postProject
 		{3FEE6A1F-7867-4406-A0B7-EF574C6DE99F} = {3FEE6A1F-7867-4406-A0B7-EF574C6DE99F}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Selenium.Gaiaonline.Tests", "Selenium.Gaiaonline.Tests\Selenium.Gaiaonline.Tests.csproj", "{DFD86089-4152-454D-988F-4B2FDFB67F8A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Selenium.Gaiaonline.Tests", "Selenium.Gaiaonline.Tests\Selenium.Gaiaonline.Tests.csproj", "{DFD86089-4152-454D-988F-4B2FDFB67F8A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Selenium.MyPokedex", "Selenium.MyPokedex\Selenium.MyPokedex.csproj", "{1F80FF78-B4B9-4A51-BA2E-D0E365FEBD30}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Selenium.MyPokedex.Tests", "Selenium.MyPokedex.Tests\Selenium.MyPokedex.Tests.csproj", "{99C2D8BF-726A-4D4F-92D9-00DB6293EEE9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,6 +34,14 @@ Global
 		{DFD86089-4152-454D-988F-4B2FDFB67F8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DFD86089-4152-454D-988F-4B2FDFB67F8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DFD86089-4152-454D-988F-4B2FDFB67F8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F80FF78-B4B9-4A51-BA2E-D0E365FEBD30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F80FF78-B4B9-4A51-BA2E-D0E365FEBD30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F80FF78-B4B9-4A51-BA2E-D0E365FEBD30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F80FF78-B4B9-4A51-BA2E-D0E365FEBD30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99C2D8BF-726A-4D4F-92D9-00DB6293EEE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99C2D8BF-726A-4D4F-92D9-00DB6293EEE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99C2D8BF-726A-4D4F-92D9-00DB6293EEE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99C2D8BF-726A-4D4F-92D9-00DB6293EEE9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
