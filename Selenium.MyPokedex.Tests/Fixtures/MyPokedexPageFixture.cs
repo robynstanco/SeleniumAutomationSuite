@@ -13,7 +13,7 @@ namespace Selenium.MyPokedex.Tests.Fixtures
         }
 
         [TestMethod]
-        public void GoToMyPokedexPageIsSuccessful()
+        public void GoingToMyPokedexPageIsSuccessful()
         {
             MyPokedexPage.AssertIsAt();
         }

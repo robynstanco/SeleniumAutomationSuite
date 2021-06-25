@@ -5,10 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Forms\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Selenium.Framework\Selenium.Framework.csproj" />
   </ItemGroup>
 

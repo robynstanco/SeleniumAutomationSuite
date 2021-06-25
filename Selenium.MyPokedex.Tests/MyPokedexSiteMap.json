@@ -3,5 +3,10 @@
     "Name": "MyPokedex",
     "Title": "Pokédex App - My Pokédex",
     "RelativePath": "/"
+  },
+  {
+    "Name": "AddPokemon",
+    "Title": "Pokédex App - Add a Pokémon to your Pokédex!",
+    "RelativePath": "/PokemonForm"
   }
 ]
