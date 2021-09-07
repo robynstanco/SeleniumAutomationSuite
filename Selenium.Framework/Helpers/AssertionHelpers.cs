@@ -43,6 +43,18 @@ namespace Selenium.Framework.Helpers
         }
 
         /// <summary>
+        /// Assert the given xpath is visible.
+        /// </summary>
+        /// <param name="xpath">xpath to be visible</param>
+        /// <param name="maxWait">maximum time to wait</param>
+        public static void AssertElementIsVisibleByXPath(string xpath, TimeSpan maxWait)
+        {
+            By elementLocator = By.XPath(xpath);
+
+            AssertElementIsVisible(maxWait, elementLocator);
+        }
+
+        /// <summary>
         /// Assert the given element is visible.
         /// </summary>
         /// <param name="maxWait">maximum time to wait</param>

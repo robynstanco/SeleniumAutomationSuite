@@ -1,4 +1,5 @@
-﻿using Selenium.Framework.Helpers;
+﻿using Selenium.Framework;
+using Selenium.Framework.Helpers;
 
 namespace Selenium.MyPokedex.Pages
 {
@@ -20,6 +21,32 @@ namespace Selenium.MyPokedex.Pages
         public static void AssertIsAt()
         {
             AssertionHelpers.AssertIsAtPage(MyPokedex, TimeSpanHelpers.NormalWait);
+        }
+
+        /// <summary>
+        /// Assert the release of the pokemon from the mypokedex page succeeds within a normal timespan.
+        /// </summary>
+        public static void AssertReleaseIsSuccessful()
+        {
+            AssertionHelpers.AssertElementIsVisibleByXPath(string.Format(Constants.HeaderWithTextXPath, 
+                "The release was successful!"), TimeSpanHelpers.NormalWait);
+        }
+
+        /// <summary>
+        /// View the Pokemon from Pokedex by given nickname.
+        /// </summary>
+        /// <param name="nickName">nickname to view</param>
+        public static void ViewPokemonByNickname(string nickName)
+        {
+            ElementHelpers.ClickFirstElementByXPath("//h4[text()='Nickname: " + nickName + "']");
+        }
+
+        /// <summary>
+        /// Release the current Pokemon.
+        /// </summary>
+        public static void ReleaseCurrentPokemon()
+        {
+            ElementHelpers.ClickFirstElementByXPath("//a[contains(@href, 'Delete')]");
         }
     }
 }
